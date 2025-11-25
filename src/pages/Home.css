@@ -1,0 +1,721 @@
+/* Global Fluid Animation */
+.global-fluid-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: #000000;
+  opacity: 0.5;
+}
+
+.global-fluid-animation canvas {
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: auto;
+  display: block;
+}
+
+.home {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  background: transparent;
+}
+
+.liquid-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.liquid-animation canvas {
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: auto;
+  display: block;
+  clip-path: inset(0);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  max-width: 900px;
+  margin-top: 20rem;
+}
+
+.titles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.title-item {
+  white-space: nowrap;
+}
+
+.title-separator {
+  width: 40px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.main-name {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 300;
+  margin: 0;
+  margin-bottom: 6rem;
+  letter-spacing: 0.02em;
+  background: linear-gradient(135deg, #ffffff 0%, #67b5ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.location {
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.intro {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.intro p {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+}
+
+.intro p:first-child {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+/* About Section */
+.about-section {
+  min-height: 100vh;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem 0rem 2rem;
+  position: relative;
+  overflow: visible;
+}
+
+.about-liquid-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.4;
+  filter: blur(2px);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.about-liquid-animation canvas {
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: auto;
+  display: block;
+  clip-path: inset(0);
+}
+
+.about-container {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.about-image {
+  width: 100%;
+  max-width: 400px;
+  animation: fadeInLeft 1s ease-out, float 6s ease-in-out infinite;
+  animation-delay: 0s, 1s;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+  border-radius: 20px;
+}
+
+.about-image:hover img {
+  transform: scale(1.05);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  animation: fadeInRight 1s ease-out;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.about-text {
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.4;
+  color: #ffffff;
+  margin: 0;
+}
+
+.cv-button {
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.cv-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.cv-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.cv-button:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.cv-button:active {
+  transform: translateY(0);
+}
+
+/* Work Section */
+.work-section {
+  background: transparent;
+  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: visible;
+}
+
+.work-container {
+  max-width: 1400px;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.section-header {
+  margin-bottom: 4rem;
+  text-align: left;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #667eea;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.section-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea 0%, transparent 100%);
+}
+
+.work-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0.5rem 0 1rem 0;
+  text-align: left;
+  background: linear-gradient(135deg, #ffffff 0%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.work-subtitle {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.work-card {
+  padding: 2.5rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-height: 550px;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.work-card:hover::before {
+  transform: scaleX(1);
+}
+
+.work-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-dark {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-dark:hover {
+  box-shadow: 0 25px 50px rgba(102, 126, 234, 0.2);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.card-light {
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-light:hover {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.card-blue {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-blue:hover {
+  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.4);
+  border-color: rgba(147, 197, 253, 0.3);
+}
+
+.company-logo {
+  margin-bottom: 1.5rem;
+  min-height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.company-logo-img {
+  max-width: 180px;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(1.1);
+}
+
+.axona-logo .company-logo-img {
+  max-width: 220px;
+}
+
+.robin-logo .company-logo-img {
+  max-width: 160px;
+}
+
+.work-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.work-role {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: inherit;
+  letter-spacing: -0.02em;
+}
+
+.work-duration {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0;
+  opacity: 0.6;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.work-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0.5rem 0;
+  color: inherit;
+  opacity: 0.85;
+}
+
+.work-responsibilities {
+  margin: 0.5rem 0;
+}
+
+.work-responsibilities h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+  color: inherit;
+  opacity: 0.9;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.work-responsibilities ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: none;
+}
+
+.work-responsibilities li {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  color: inherit;
+  opacity: 0.8;
+  position: relative;
+}
+
+.work-responsibilities li::before {
+  content: '▹';
+  position: absolute;
+  left: -1.25rem;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.card-light .work-responsibilities li::before {
+  color: #764ba2;
+}
+
+.card-blue .work-responsibilities li::before {
+  color: #93c5fd;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.tech-badge {
+  padding: 0.4rem 0.9rem;
+  background: rgba(102, 126, 234, 0.15);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.card-dark .tech-badge {
+  background: rgba(102, 126, 234, 0.2);
+  border-color: rgba(102, 126, 234, 0.4);
+  color: #b4c6fc;
+}
+
+.card-dark .tech-badge:hover {
+  background: rgba(102, 126, 234, 0.3);
+  border-color: rgba(102, 126, 234, 0.6);
+  transform: translateY(-2px);
+}
+
+.card-light .tech-badge {
+  background: rgba(118, 75, 162, 0.1);
+  border-color: rgba(118, 75, 162, 0.3);
+  color: #764ba2;
+}
+
+.card-light .tech-badge:hover {
+  background: rgba(118, 75, 162, 0.2);
+  border-color: rgba(118, 75, 162, 0.5);
+  transform: translateY(-2px);
+}
+
+.card-blue .tech-badge {
+  background: rgba(147, 197, 253, 0.2);
+  border-color: rgba(147, 197, 253, 0.4);
+  color: #dbeafe;
+}
+
+.card-blue .tech-badge:hover {
+  background: rgba(147, 197, 253, 0.3);
+  border-color: rgba(147, 197, 253, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Placeholder Sections */
+.section-placeholder {
+  min-height: 100vh;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: visible;
+}
+
+.section-content {
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 10;
+}
+
+.section-content h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #67b5ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-content p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Liquid animation opacity variations for different sections */
+.work-section .liquid-animation {
+  opacity: 0.3;
+  filter: blur(3px);
+}
+
+.section-placeholder .liquid-animation {
+  opacity: 0.35;
+  filter: blur(2px);
+}
+
+@media (max-width: 768px) {
+  .titles {
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 0.65rem;
+  }
+  
+  .title-separator {
+    width: 1px;
+    height: 20px;
+  }
+  
+  .main-name {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .location {
+    font-size: 1rem;
+  }
+  
+  .intro {
+    font-size: 2rem;
+  }
+  
+  .intro br {
+    display: none;
+  }
+  
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .about-image {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .about-text {
+    font-size: 1.5rem;
+  }
+  
+  .work-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+  
+  .section-label {
+    font-size: 0.75rem;
+    padding-left: 2rem;
+  }
+  
+  .section-label::before {
+    width: 1.5rem;
+  }
+  
+  .work-title {
+    font-size: 1.75rem;
+    margin: 0.5rem 0 0.75rem 0;
+  }
+  
+  .work-subtitle {
+    font-size: 1rem;
+  }
+  
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .work-card {
+    padding: 2rem 1.5rem;
+    min-height: auto;
+  }
+  
+  .work-role {
+    font-size: 1.25rem;
+  }
+  
+  .company-logo-img {
+    max-width: 150px;
+    max-height: 50px;
+  }
+  
+  .axona-logo .company-logo-img {
+    max-width: 180px;
+  }
+  
+  .robin-logo .company-logo-img {
+    max-width: 140px;
+  }
+  
+  .tech-stack {
+    gap: 0.4rem;
+  }
+  
+  .tech-badge {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.75rem;
+  }
+}
+
