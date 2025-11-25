@@ -59,16 +59,19 @@ const Home = () => {
             <h2 className="about-text">
              Creative AI enthusiast driven by solving complex problems and crafting smart, user-centered solutions for real-world challenges.
             </h2>
-            <button className="cv-button">REQUEST MY CV</button>
+            {/* <button className="cv-button">REQUEST MY CV</button> */}
           </div>
         </div>
       </section>
 
       <section id="tools" className="skills-section">
-        <div className="skills-container">
-          <h2 className="skills-title">Technical Skills</h2>
-          <p className="skills-subtitle">Only some of the many tools, infrastructure and systems I use</p>
-          
+      <div className="projects-container">
+          <div className="section-header">
+            <span className="section-label">Technical Skills</span>
+            <h2 className="projects-main-title">Technical Skills</h2>
+            <p className="projects-main-subtitle">Only some of the many tools, infrastructure and systems I use</p>
+          </div>
+
           <div className="skills-category">
             <h3 className="category-title">Frameworks + Languages</h3>
             <div className="skills-grid">
@@ -114,7 +117,7 @@ const Home = () => {
           <div className="skills-divider"></div>
 
           <div className="skills-category">
-            <h3 className="category-title">Tools</h3>
+            <h3 className="category-title">Tools & Infrastructure</h3>
             <div className="skills-grid">
               <div className="skill-item">
                 <div className="skill-icon aws-icon">☁️</div>
