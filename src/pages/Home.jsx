@@ -169,7 +169,7 @@ const Home = () => {
               <div className="project-image">
                 <img src="/disease-prediction.png" alt="Disease Prediction Heatmap" />
               </div>
-              <a href="#" className="project-button">View on GitHub</a>
+              <a href="https://github.com/eritur247/Prediction-of-Disease" className="project-button">View on GitHub</a>
             </div>
 
             {/* Project 2 */}
@@ -197,9 +197,9 @@ const Home = () => {
                 as a human would.
               </p>
               <div className="project-image">
-                <img src="/ntombi-chat.png" alt="Ntombi Chatbot Interface" />
+                <img src="/webchat.jpeg" alt="Ntombi Chatbot Interface" />
               </div>
-              <a href="#" className="project-button">View Here</a>
+              <a href="https://www.nimblegroup.co.za/chat-with-us" className="project-button">View Here</a>
             </div>
 
             {/* Project 4 */}
@@ -339,7 +339,7 @@ const Home = () => {
               <span className="section-label">Get In Touch</span>
               <h2 className="contact-main-title">Let's Work Together</h2>
               <p className="contact-main-subtitle">
-                Available for freelance opportunities, collaborations, and full-time positions.
+                Available for freelance opportunities and collaborations.
                 Let's discuss how we can create something exceptional.
               </p>
             </div>

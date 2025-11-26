@@ -290,7 +290,7 @@
 
 .section-header {
   margin-bottom: 4rem;
-  text-align: left;
+  text-align: center;
 }
 
 .section-label {
@@ -302,18 +302,28 @@
   color: #667eea;
   margin-bottom: 1rem;
   position: relative;
-  padding-left: 2.5rem;
+  padding: 0 1rem;
 }
 
-.section-label::before {
+.section-label::before,
+.section-label::after {
   content: '';
   position: absolute;
-  left: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 2rem;
   height: 2px;
-  background: linear-gradient(90deg, #667eea 0%, transparent 100%);
+  background: #667eea;
+}
+
+.section-label::before {
+  right: 100%;
+  margin-right: 0.75rem;
+}
+
+.section-label::after {
+  left: 100%;
+  margin-left: 0.75rem;
 }
 
 .work-title {
@@ -321,7 +331,7 @@
   font-weight: 500;
   color: #ffffff;
   margin: 0.5rem 0 1rem 0;
-  text-align: left;
+  text-align: center;
   background: linear-gradient(135deg, #ffffff 0%, #667eea 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -332,10 +342,11 @@
 .work-subtitle {
   font-size: 1.125rem;
   color: rgba(255, 255, 255, 0.6);
-  margin: 0;
+  margin: 0 auto;
   font-weight: 400;
   line-height: 1.6;
   max-width: 600px;
+  text-align: center;
 }
 
 .work-grid {
@@ -702,7 +713,7 @@
   font-weight: 500;
   color: #ffffff;
   margin: 0.5rem 0 1rem 0;
-  text-align: left;
+  text-align: center;
   background: linear-gradient(135deg, #ffffff 0%, #667eea 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -713,10 +724,11 @@
 .projects-main-subtitle {
   font-size: 1.125rem;
   color: rgba(255, 255, 255, 0.6);
-  margin: 0 0 4rem 0;
+  margin: 0 auto 4rem auto;
   font-weight: 400;
   line-height: 1.6;
   max-width: 600px;
+  text-align: center;
 }
 
 .projects-grid {
@@ -879,10 +891,11 @@
 .contact-main-subtitle {
   font-size: 1.125rem;
   color: rgba(255, 255, 255, 0.6);
-  margin: 0 0 4rem 0;
+  margin: 0 auto 4rem auto;
   font-weight: 400;
   line-height: 1.6;
   max-width: 600px;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1151,11 +1164,20 @@
   
   .section-label {
     font-size: 0.75rem;
-    padding-left: 2rem;
+    padding: 0 0.75rem;
+  }
+  
+  .section-label::before,
+  .section-label::after {
+    width: 1.5rem;
   }
   
   .section-label::before {
-    width: 1.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .section-label::after {
+    margin-left: 0.5rem;
   }
   
   .work-title {
