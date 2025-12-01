@@ -270,7 +270,7 @@ const Home = () => {
               </div>
               <div className="work-details">
                 <h3 className="work-role">Contract Data Scientist</h3>
-                <p className="work-duration">Nov 2023 - Jan 2023</p>
+                <p className="work-duration">Nov 2023 - Jan 2024</p>
                 <p className="work-description">
                   Developed machine learning solutions to connect individuals with unclaimed 
                   benefits and assets, processing large datasets to identify rightful owners 
