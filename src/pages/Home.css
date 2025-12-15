@@ -888,6 +888,20 @@
   letter-spacing: -0.02em;
 }
 
+.github-graph {
+  margin-top: 5rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #0d1117; /* GitHub dark */
+  overflow-x: auto;
+}
+
+.github-graph img {
+  width: 90%;
+  max-width: 90%;
+  display: block;
+}
+
 .contact-main-subtitle {
   font-size: 1.125rem;
   color: rgba(255, 255, 255, 0.6);

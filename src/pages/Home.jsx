@@ -117,34 +117,55 @@ const Home = () => {
           <div className="skills-divider"></div>
 
           <div className="skills-category">
-            <h3 className="category-title">Tools & Infrastructure</h3>
-            <div className="skills-grid">
-              <div className="skill-item">
-                <div className="skill-icon aws-icon">☁️</div>
-                <span className="skill-name">AWS</span>
-              </div>
-              <div className="skill-item">
-                <div className="skill-icon github-icon">🔄</div>
-                <span className="skill-name">GitHub Actions</span>
-              </div>
-              <div className="skill-item">
-                <div className="skill-icon docker-icon">🐳</div>
-                <span className="skill-name">Docker</span>
-              </div>
-              <div className="skill-item">
-                <div className="skill-icon langchain-icon">🦜</div>
-                <span className="skill-name">LangChain</span>
-              </div>
-              <div className="skill-item">
-                <div className="skill-icon doppler-icon">🔐</div>
-                <span className="skill-name">Doppler Secrets Manager</span>
-              </div>
-              <div className="skill-item">
-                <div className="skill-icon sentry-icon">👁️</div>
-                <span className="skill-name">Sentry</span>
-              </div>
-            </div>
-          </div>
+  <h3 className="category-title">Tools & Infrastructure</h3>
+
+  <div className="skills-grid">
+    <div className="skill-item">
+      <div className="skill-icon aws-icon">☁️</div>
+      <span className="skill-name">AWS</span>
+    </div>
+
+    <div className="skill-item">
+      <div className="skill-icon github-icon">🔄</div>
+      <span className="skill-name">GitHub Actions</span>
+    </div>
+
+    <div className="skill-item">
+      <div className="skill-icon docker-icon">🐳</div>
+      <span className="skill-name">Docker</span>
+    </div>
+
+    <div className="skill-item">
+      <div className="skill-icon langchain-icon">🦜</div>
+      <span className="skill-name">LangChain</span>
+    </div>
+
+    <div className="skill-item">
+      <div className="skill-icon doppler-icon">🔐</div>
+      <span className="skill-name">Doppler Secrets Manager</span>
+    </div>
+
+    <div className="skill-item">
+      <div className="skill-icon sentry-icon">👁️</div>
+      <span className="skill-name">Sentry</span>
+    </div>
+  </div>
+
+  {/* GitHub contribution graph */}
+  <div className="github-graph">
+    <a
+      href="https://github.com/eritur247"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="https://ghchart.rshah.org/eritur247"
+        alt="GitHub contribution graph for eritur247"
+      />
+    </a>
+  </div>
+</div>
+
         </div>
       </section>
 
@@ -167,7 +188,7 @@ const Home = () => {
                 This was done with Nearest-Neighbours Classifier and Naive Bayes Classifier.
               </p>
               <div className="project-image">
-                <img src="/disease-prediction.png" alt="Disease Prediction Heatmap" />
+                <img src="/KNN.png" alt="Disease Prediction Heatmap" />
               </div>
               <a href="https://github.com/eritur247/Prediction-of-Disease" className="project-button">View on GitHub</a>
             </div>
@@ -184,7 +205,7 @@ const Home = () => {
               <div className="project-image">
                 <img src="/project1.png" alt="Blood Smear Analysis" />
               </div>
-              <a href="#" className="project-button">Request Information</a>
+              <a href="#contact" className="project-button">Request Information</a>
             </div>
 
             {/* Project 3 */}
@@ -217,8 +238,8 @@ const Home = () => {
                 <li>- Facebook Messenger (coming soon)</li>
                 <li>- WebChat (coming soon)</li>
               </ul>
-              <div className="project-image project-image-logo">
-                <img src="/ntombi-logo.png" alt="MY NTOMBI Logo" />
+              <div className="project-image">
+                <img src="/omni.png" alt="MY NTOMBI Logo" />
               </div>
             </div>
 
