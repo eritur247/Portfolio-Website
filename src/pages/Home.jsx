@@ -32,8 +32,8 @@ const Home = () => {
           <div className="intro">
             <p>Hi! It's nice to meet you.</p>
             <p>
-              As an AI Engineer & Full-Stack Developer, I'm passionate<br />
-              about building intelligent systems that drive real impact.<br />
+              As an AI Engineer & Full-Stack Developer, I enjoy<br />
+              building intelligent systems that drive real impact.<br />
               With expertise in machine learning, deep learning (CNNs,<br />
               NLP), and software development, I focus on bridging the <br />
               gap between AI research and practical applications. <br />
@@ -149,8 +149,20 @@ const Home = () => {
       <div className="skill-icon sentry-icon">👁️</div>
       <span className="skill-name">Sentry</span>
     </div>
+
+    <div className="skill-item">
+      <div className="skill-icon sentry-icon">▲</div>
+      <span className="skill-name">Vercel</span>
+    </div>
+
+    <div className="skill-item">
+      <div className="skill-icon sentry-icon">💡</div>
+      <span className="skill-name">Linear</span>
+    </div>
   </div>
 
+  <div className="skills-divider"></div>
+  <h3 className="category-title">Code Commits</h3>
   {/* GitHub contribution graph */}
   <div className="github-graph">
     <a
@@ -181,7 +193,7 @@ const Home = () => {
             
             {/* Project 1 */}
             <div className="project-card">
-              <span className="project-date">JUNE 2023</span>
+              <span className="project-date">JUNE 2023 - Personal</span>
               <h3 className="project-title">Prediction of Disease</h3>
               <p className="project-description">
                 This analysis differentiates between Flu, Allergy, Cold and Covid symptoms. 
@@ -195,7 +207,7 @@ const Home = () => {
 
             {/* Project 2 */}
             <div className="project-card">
-              <span className="project-date">NOVEMBER 2023</span>
+              <span className="project-date">NOVEMBER 2023 - Personal</span>
               <h3 className="project-title">The Role of Machine Learning in Classifying B-cell-subtypes of Acute Lymphoblastic Leukaemia from Blood Smear Images.</h3>
               <p className="project-description">
                 To aid in the early detection of Acute Lymphoblastic Leukaemia, two machine learning 
@@ -210,7 +222,7 @@ const Home = () => {
 
             {/* Project 3 */}
             <div className="project-card">
-              <span className="project-date">AUGUST 2024</span>
+              <span className="project-date">AUGUST 2024 - Professional</span>
               <h3 className="project-title">Client Chatbot</h3>
               <p className="project-description">
                 Working at Nimble Group, I was part of a team that designed and implemented a 
@@ -225,7 +237,7 @@ const Home = () => {
 
             {/* Project 4 */}
             <div className="project-card">
-              <span className="project-date">JANUARY 2025</span>
+              <span className="project-date">JANUARY 2025 - Professional</span>
               <h3 className="project-title">Omni-Channel Application</h3>
               <p className="project-description">
                 An internal-facing omnichannel and workflow application designed to streamline agent 
@@ -235,7 +247,6 @@ const Home = () => {
               <ul className="project-features">
                 <li>- WhatsApp</li>
                 <li>- Voice calls</li>
-                <li>- Facebook Messenger (coming soon)</li>
                 <li>- WebChat (coming soon)</li>
               </ul>
               <div className="project-image">
@@ -243,7 +254,24 @@ const Home = () => {
               </div>
             </div>
 
+{/* Project 5 */}
+<div className="project-card">
+              <span className="project-date">AUGUST 2025 - Personal</span>
+              <h3 className="project-title">AI Certainty Visualizer</h3>
+              <p className="project-description">
+              An interactive UI that shows how confident a language model is as it writes. 
+              Tokens stream live from the API and are visually annotated based on certainty, 
+              with sentence-level confidence summaries that make uncertainty easy to understand without reading logs or probabilities.
+
+              </p>
+              <div className="project-image">
+                <img src="/AI-certainty.png" alt="AI certainty visualizer" />
+              </div>
+              <a href="https://ledger-orcin.vercel.app" className="project-button">View Here</a>
+            </div>
+
           </div>
+
         </div>
       </section>
       
