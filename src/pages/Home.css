@@ -1361,3 +1361,184 @@
   }
 }
 
+
+.work-company {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.career-timeline {
+  position: relative;
+  margin-top: 28px;
+  padding-left: 28px;
+}
+
+/* Continuous vertical line */
+.career-timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 12px;
+  width: 2px;
+  background: #e2e8f0;
+}
+
+.timeline-position {
+  position: relative;
+  padding-bottom: 32px;
+}
+
+.timeline-position:last-child {
+  padding-bottom: 0;
+}
+
+/* Timeline dots */
+.timeline-marker {
+  position: absolute;
+  left: -28px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  z-index: 1;
+  border: 3px solid white;
+}
+
+.timeline-marker.current {
+  background: #2563eb;
+  box-shadow: 0 0 0 3px #dbeafe;
+}
+
+.timeline-marker.previous {
+  background: #94a3b8;
+  box-shadow: 0 0 0 3px #f1f5f9;
+}
+
+.timeline-role-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.current-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.timeline-content .work-role {
+  margin: 0;
+}
+
+.timeline-content .work-duration {
+  margin: 6px 0 14px;
+}
+
+.timeline-content .work-description {
+  margin-bottom: 16px;
+}
+
+.work-details > .tech-stack {
+  margin-top: 26px;
+}
+
+
+.timeline-expand-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 4px 0;
+  border: none;
+  background: transparent;
+  color: #17171c;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.timeline-expand-button:hover {
+  color: #17171c;
+}
+
+.timeline-expand-button:focus-visible {
+  outline: 2px solid #17171c;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+.chevron {
+  transition: transform 0.2s ease;
+}
+
+.chevron.rotated {
+  transform: rotate(180deg);
+}
+
+.timeline-expanded {
+  margin-top: 14px;
+  padding: 16px 18px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  animation: expandFade 0.2s ease-out;
+}
+
+.timeline-expanded .work-responsibilities {
+  margin: 0;
+  color: #17171c;
+}
+
+.timeline-expanded h4 {
+  margin: 0 0 10px;
+  font-size: 0.85rem;
+  color: #17171c;
+}
+
+.timeline-expanded ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #17171c;
+}
+
+.timeline-expanded li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+  font-size: 0.85rem;
+  color: #17171c;
+}
+
+.timeline-expanded li:last-child {
+  margin-bottom: 0;
+}
+
+@keyframes expandFade {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chevron,
+  .timeline-expand-button {
+    transition: none;
+    color: #17171c;
+  }
+
+  .timeline-expanded {
+    animation: none;
+  }
+}

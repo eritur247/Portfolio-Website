@@ -1,7 +1,23 @@
 import './Home.css';
 import SplashCursor from './SplashCursor';
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 const Home = () => {
+
+  const [expandedRoles, setExpandedRoles] = useState({
+    product: false,
+    engineer: false,
+  });
+  
+  const toggleRole = (role) => {
+    setExpandedRoles((prev) => ({
+      ...prev,
+      [role]: !prev[role],
+    }));
+  };
+
+
   return (
     <>
       {/* Global fluid animation */}
@@ -225,9 +241,9 @@ const Home = () => {
               <span className="project-date">AUGUST 2024 - Professional</span>
               <h3 className="project-title">Client Chatbot</h3>
               <p className="project-description">
-                Working at Nimble Group, I was part of a team that designed and implemented a 
-                conversational AI chatbot named Ntombi. It is able to converse with clients just 
-                as a human would.
+                At Nimble Group, I was part of a team that designed and built a conversational AI assistant that talks with customers over WhatsApp, email and web chat. 
+                It understands what the customer needs, then handles account queries, sends documents and sets up payment arrangements on its own. 
+                It increased digital collections by 300x in 2 years.
               </p>
               <div className="project-image">
                 <img src="/webchat.jpeg" alt="Ntombi Chatbot Interface" />
@@ -237,26 +253,26 @@ const Home = () => {
 
             {/* Project 4 */}
             <div className="project-card">
-              <span className="project-date">JANUARY 2025 - Professional</span>
-              <h3 className="project-title">Omni-Channel Application</h3>
+              <span className="project-date">Ongoing - Professional</span>
+              <h3 className="project-title">Customer Relationship Management</h3>
               <p className="project-description">
-                An internal-facing omnichannel and workflow application designed to streamline agent 
-                interactions across multiple communication channels. Built with React, Next.js, as well 
-                as AI integrations, it empowers agents to handle high-volume customer queries efficiently through:
+              An internal CRM for a high-volume contact centre, giving agents a single view of each customer's accounts, history and interactions across voice and chat. Built with React, Next.js and TypeScript, it helps agents manage customer relationships and resolve accounts efficiently through:
+              Customer 360 view: account details, notes, contact history and status in one place.
+
               </p>
-              <ul className="project-features">
+              {/* <ul className="project-features">
                 <li>- WhatsApp</li>
                 <li>- Voice calls</li>
                 <li>- WebChat (coming soon)</li>
-              </ul>
+              </ul> */}
               <div className="project-image">
-                <img src="/omni.png" alt="MY NTOMBI Logo" />
+                <img src="/omni.png" alt="Customer Relationship Management" />
               </div>
             </div>
 
 {/* Project 5 */}
 <div className="project-card">
-              <span className="project-date">AUGUST 2025 - Personal</span>
+              <span className="project-date">OCTOBER 2025 - Personal</span>
               <h3 className="project-title">AI Certainty Visualizer</h3>
               <p className="project-description">
               An interactive UI that shows how confident a language model is as it writes. 
@@ -342,40 +358,168 @@ const Home = () => {
               </div>
             </div>
 
+           
+
             <div className="work-card card-blue">
-              <div className="company-logo nimble-logo">
-                <img src="/nimble.webp" alt="Nimble Group" className="company-logo-img" />
-              </div>
-              <div className="work-details">
-                <h3 className="work-role">Lead Project Engineer</h3>
-                <p className="work-duration">Apr 2024 - present</p>
-                <p className="work-description">
-                  Leading development of cutting-edge AI-powered solutions to help individuals and 
-                  businesses improve their credit and financial health. Building full-stack applications 
-                  and intelligent systems that drive measurable business impact.
-                </p>
-                <div className="work-responsibilities">
-                  <h4>Key Achievements:</h4>
-                  <ul>
-                    <li>Spearheaded development of an internal omnichannel platform using React + Node.js/Express</li>
-                    <li>Built and deployed an agentic chatbot (WhatsApp, email, webchat) using LangGraph + OpenAI APIs, increasing digital collections by 2000%</li>
-                    <li>Designed RESTful APIs and implemented WebSockets for real-time interaction</li>
-                    <li>Managed CI/CD pipelines with Docker + GitHub Actions for seamless deployment</li>
-                    <li>Collaborated with call center agents, management, and executives to align technology with business needs</li>
-                  </ul>
-                </div>
-                <div className="tech-stack">
-                  <span className="tech-badge">Python</span>
-                  <span className="tech-badge">React</span>
-                  <span className="tech-badge">Node.js</span>
-                  <span className="tech-badge">MSSQL</span>
-                  <span className="tech-badge">Docker</span>
-                  <span className="tech-badge">AWS</span>
-                  <span className="tech-badge">Git</span>
-                  <span className="tech-badge">CI/CD</span>
-                </div>
+  <div className="company-logo nimble-logo">
+    <img
+      src="/nimble.webp"
+      alt="Nimble Group"
+      className="company-logo-img"
+    />
+  </div>
+
+  <div className="work-details">
+    {/* <h3 className="work-company">Nimble Group</h3> */}
+    {/* <p className="work-duration">Apr 2024 - Present</p> */}
+
+    <div className="career-timeline">
+      {/* Current position */}
+      <div className="timeline-position">
+        <div className="timeline-marker current" />
+
+        <div className="timeline-content">
+          <div className="timeline-role-header">
+            <h3 className="work-role">Product Manager</h3>
+            <span className="current-badge">Current</span>
+          </div>
+
+          <p className="work-duration">
+            Dec 2025 - Present
+          </p>
+
+          <p className="work-description">
+            Managing the development and delivery of digital
+            products and the internal CRM, bridging business
+            requirements and engineering.
+          </p>
+
+          <button
+            type="button"
+            className="timeline-expand-button"
+            aria-expanded={expandedRoles.product}
+            onClick={() => toggleRole("product")}
+          >
+            {expandedRoles.product
+              ? "Hide achievements"
+              : "View achievements"}
+            <ChevronDown
+              size={16}
+              className={
+                expandedRoles.product ? "chevron rotated" : "chevron"
+              }
+            />
+          </button>
+
+          {expandedRoles.product && (
+            <div className="timeline-expanded">
+              <div className="work-responsibilities">
+                <h4>Key Achievements:</h4>
+                <ul>
+                  <li>
+                    Translating business needs into technical
+                    requirements and solutions
+                  </li>
+                  <li>
+                    Driving development of internal CRM
+                    and automation platforms
+                  </li>
+                  <li>
+                    Increased digital collections by 300x
+                    in two years
+                  </li>
+                  <li>
+                    Collaborating with stakeholders across
+                    engineering, operations, and management
+                  </li>
+                </ul>
               </div>
             </div>
+          )}
+        </div>
+      </div>
+
+      {/* Previous position */}
+      <div className="timeline-position">
+        <div className="timeline-marker previous" />
+
+        <div className="timeline-content">
+          <h3 className="work-role">
+            Lead Project Engineer
+          </h3>
+
+          <p className="work-duration">
+            Apr 2024 - Nov 2025
+          </p>
+
+          <p className="work-description">
+            Developed AI-powered solutions and full-stack
+            applications to improve credit and financial
+            operations, focusing on automation,
+            scalability, and business impact.
+          </p>
+
+          <button
+            type="button"
+            className="timeline-expand-button"
+            aria-expanded={expandedRoles.engineer}
+            onClick={() => toggleRole("engineer")}
+          >
+            {expandedRoles.engineer
+              ? "Hide achievements"
+              : "View achievements"}
+            <ChevronDown
+              size={16}
+              className={
+                expandedRoles.engineer ? "chevron rotated" : "chevron"
+              }
+            />
+          </button>
+
+          {expandedRoles.engineer && (
+            <div className="timeline-expanded">
+              <div className="work-responsibilities">
+                <h4>Key Achievements:</h4>
+                <ul>
+                  <li>
+                    Spearheaded development of an internal
+                    omnichannel platform using React and Node.js
+                  </li>
+                  <li>
+                    Contributed to an agentic chatbot using
+                    LangGraph and OpenAI APIs, helping increase
+                    digital collections by 2000%
+                  </li>
+                  <li>
+                    Designed RESTful APIs and implemented
+                    WebSockets for real-time communication
+                  </li>
+                  <li>
+                    Managed CI/CD pipelines with Docker
+                    and GitHub Actions
+                  </li>
+                </ul>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+
+    <div className="tech-stack">
+      {[
+        "Python", "React", "Node.js", "MSSQL",
+        "Docker", "AWS", "Git", "CI/CD", "TypeScript"
+      ].map((tech) => (
+        <span key={tech} className="tech-badge">
+          {tech}
+        </span>
+      ))}
+    </div>
+  </div>
+</div>
+
+
           </div>
         </div>
       </section>
